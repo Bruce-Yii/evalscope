@@ -167,12 +167,12 @@ evalscope service
 
 ## 参考文献
 
-1.  Zhang, S. _et al._ Learning Multi-dimensional Human Preference for Text-to-Image Generation. Preprint at [https://doi.org/10.48550/arXiv.2405.14705](https://doi.org/10.48550/arXiv.2405.14705)(2024).
+1.  Zhang, S. _et al._ Learning Multi-dimensional Human Preference for Text-to-Image Generation. Preprint at [https://doi.org/10.48550/arXiv.2405.14705](https://doi.org/10.48550/arXiv.2405.14705)(2024).
     
-2.  Wu, X. _et al._ Human Preference Score v2: A Solid Benchmark for Evaluating Human Preferences of Text-to-Image Synthesis. Preprint at [https://doi.org/10.48550/arXiv.2306.09341](https://doi.org/10.48550/arXiv.2306.09341)(2023).
+2.  Wu, X. _et al._ Human Preference Score v2: A Solid Benchmark for Evaluating Human Preferences of Text-to-Image Synthesis. Preprint at [https://doi.org/10.48550/arXiv.2306.09341](https://doi.org/10.48550/arXiv.2306.09341)(2023).
     
-3.  Chang, L.-W. _et al._ FLUX: Fast Software-based Communication Overlap On GPUs Through Kernel Fusion. Preprint at [https://doi.org/10.48550/arXiv.2406.06858](https://doi.org/10.48550/arXiv.2406.06858)(2024).
+3.  Chang, L.-W. _et al._ FLUX: Fast Software-based Communication Overlap On GPUs Through Kernel Fusion. Preprint at [https://doi.org/10.48550/arXiv.2406.06858](https://doi.org/10.48550/arXiv.2406.06858)(2024).
     
-4.  Cai, Q. _et al._ HiDream-I1: A High-Efficient Image Generative Foundation Model with Sparse Diffusion Transformer. Preprint at [https://doi.org/10.48550/arXiv.2505.22705](https://doi.org/10.48550/arXiv.2505.22705)(2025).
+4.  Cai, Q. _et al._ HiDream-I1: A High-Efficient Image Generative Foundation Model with Sparse Diffusion Transformer. Preprint at [https://doi.org/10.48550/arXiv.2505.22705](https://doi.org/10.48550/arXiv.2505.22705)(2025).
     
-5.  Han, S. _et al._ EvalMuse-40K: A Reliable and Fine-Grained Benchmark with Comprehensive Human Annotations for Text-to-Image Generation Model Evaluation. Preprint at [https://doi.org/10.48550/arXiv.2412.18150](https://doi.org/10.48550/arXiv.2412.18150)(2024).
+5.  Han, S. _et al._ EvalMuse-40K: A Reliable and Fine-Grained Benchmark with Comprehensive Human Annotations for Text-to-Image Generation Model Evaluation. Preprint at [https://doi.org/10.48550/arXiv.2412.18150](https://doi.org/10.48550/arXiv.2412.18150)(2024).
