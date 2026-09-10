@@ -109,6 +109,32 @@ task_cfg = TaskConfig(
 run_task(task_cfg=task_cfg)
 ```
 
+To test Qwen-Image, use `QwenImagePipeline`. Qwen-Image currently uses `true_cfg_scale` for classifier-free guidance, so pass this parameter through `generation_config`:
+
+```python
+task_cfg = TaskConfig(
+    model='Qwen/Qwen-Image',  # model id on modelscope
+    model_task=ModelTask.IMAGE_GENERATION,  # must be IMAGE_GENERATION
+    model_args={
+        'pipeline_cls': 'QwenImagePipeline',
+        'precision': 'bfloat16',
+    },
+    datasets=[
+        'evalmuse',
+    ],
+    generation_config={
+        'height': 1328,
+        'width': 1328,
+        'num_inference_steps': 50,
+        'true_cfg_scale': 4.0,
+        'negative_prompt': ' ',
+    },
+    analysis_report=True,
+)
+
+run_task(task_cfg=task_cfg)
+```
+
 Additionally, the EvalScope framework supports specifying prompts and image paths for custom model evaluation, not limited to local text-to-image inference. For specific usage, refer here: [EvalScope Documentation](https://evalscope.readthedocs.io/zh-cn/latest/user_guides/aigc/t2i.html#id8).
 
 ## Visualization of Evaluation Results
