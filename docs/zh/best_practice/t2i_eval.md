@@ -110,6 +110,32 @@ task_cfg = TaskConfig(
 run_task(task_cfg=task_cfg)
 ```
 
+若想测试Qwen-Image模型，可使用`QwenImagePipeline`。Qwen-Image当前使用`true_cfg_scale`进行classifier-free guidance，因此该参数需要通过`generation_config`传入：
+
+```python
+task_cfg = TaskConfig(
+    model='Qwen/Qwen-Image',  # model id on modelscope
+    model_task=ModelTask.IMAGE_GENERATION,  # must be IMAGE_GENERATION
+    model_args={
+        'pipeline_cls': 'QwenImagePipeline',
+        'precision': 'bfloat16',
+    },
+    datasets=[
+        'evalmuse',
+    ],
+    generation_config={
+        'height': 1328,
+        'width': 1328,
+        'num_inference_steps': 50,
+        'true_cfg_scale': 4.0,
+        'negative_prompt': ' ',
+    },
+    analysis_report=True,
+)
+
+run_task(task_cfg=task_cfg)
+```
+
 此外EvalScope框架还支持指定prompt和image path实现自定义的模型评测，不拘泥于本地运行文生图推理，具体使用参考这里：[https://evalscope.readthedocs.io/zh-cn/latest/user\_guides/aigc/t2i.html#id8](https://evalscope.readthedocs.io/zh-cn/latest/user_guides/aigc/t2i.html#id8)
 
 ## 评测结果可视化
@@ -141,12 +167,12 @@ evalscope service
 
 ## 参考文献
 
-1.  Zhang, S. _et al._ Learning Multi-dimensional Human Preference for Text-to-Image Generation. Preprint at [https://doi.org/10.48550/arXiv.2405.14705](https://doi.org/10.48550/arXiv.2405.14705)(2024).
+1.  Zhang, S. _et al._ Learning Multi-dimensional Human Preference for Text-to-Image Generation. Preprint at [https://doi.org/10.48550/arXiv.2405.14705](https://doi.org/10.48550/arXiv.2405.14705)(2024).
     
-2.  Wu, X. _et al._ Human Preference Score v2: A Solid Benchmark for Evaluating Human Preferences of Text-to-Image Synthesis. Preprint at [https://doi.org/10.48550/arXiv.2306.09341](https://doi.org/10.48550/arXiv.2306.09341)(2023).
+2.  Wu, X. _et al._ Human Preference Score v2: A Solid Benchmark for Evaluating Human Preferences of Text-to-Image Synthesis. Preprint at [https://doi.org/10.48550/arXiv.2306.09341](https://doi.org/10.48550/arXiv.2306.09341)(2023).
     
-3.  Chang, L.-W. _et al._ FLUX: Fast Software-based Communication Overlap On GPUs Through Kernel Fusion. Preprint at [https://doi.org/10.48550/arXiv.2406.06858](https://doi.org/10.48550/arXiv.2406.06858)(2024).
+3.  Chang, L.-W. _et al._ FLUX: Fast Software-based Communication Overlap On GPUs Through Kernel Fusion. Preprint at [https://doi.org/10.48550/arXiv.2406.06858](https://doi.org/10.48550/arXiv.2406.06858)(2024).
     
-4.  Cai, Q. _et al._ HiDream-I1: A High-Efficient Image Generative Foundation Model with Sparse Diffusion Transformer. Preprint at [https://doi.org/10.48550/arXiv.2505.22705](https://doi.org/10.48550/arXiv.2505.22705)(2025).
+4.  Cai, Q. _et al._ HiDream-I1: A High-Efficient Image Generative Foundation Model with Sparse Diffusion Transformer. Preprint at [https://doi.org/10.48550/arXiv.2505.22705](https://doi.org/10.48550/arXiv.2505.22705)(2025).
     
-5.  Han, S. _et al._ EvalMuse-40K: A Reliable and Fine-Grained Benchmark with Comprehensive Human Annotations for Text-to-Image Generation Model Evaluation. Preprint at [https://doi.org/10.48550/arXiv.2412.18150](https://doi.org/10.48550/arXiv.2412.18150)(2024).
+5.  Han, S. _et al._ EvalMuse-40K: A Reliable and Fine-Grained Benchmark with Comprehensive Human Annotations for Text-to-Image Generation Model Evaluation. Preprint at [https://doi.org/10.48550/arXiv.2412.18150](https://doi.org/10.48550/arXiv.2412.18150)(2024).
